@@ -4,11 +4,11 @@ A terminal dashboard for turning Instagram reels into MP3s. Paste a pile of
 links, look them over, press start. The video is downloaded, the audio is kept,
 the video is thrown away.
 
-![Eleven links staged, waiting on the start button](docs/staged.webp)
+![Eleven links staged, waiting on the start button](https://raw.githubusercontent.com/3monthsfree/instagram-reel-recorder/main/docs/staged.webp)
 
 *Paste a block of links: they wait in the add panel until you press start.*
 
-![The queue running, with the speed waveform under load](docs/running.webp)
+![The queue running, with the speed waveform under load](https://raw.githubusercontent.com/3monthsfree/instagram-reel-recorder/main/docs/running.webp)
 
 *Under way: progress meters per row, and the speed waveform with worker load
 filling in behind it.*
