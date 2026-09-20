@@ -1,34 +1,51 @@
+<div align="center">
+
 # reel2mp3
 
-A terminal dashboard for turning Instagram reels into MP3s. Paste a pile of
-links, look them over, press start. The video is downloaded, the audio is kept,
-the video is thrown away.
+**Paste a wall of Instagram links. Press start. Walk away with MP3s.**
 
-![Eleven links staged, waiting on the start button](https://raw.githubusercontent.com/3monthsfree/instagram-reel-recorder/main/docs/staged.webp)
+A little control room for reel audio: stage a batch, watch it run, keep the
+sound and bin the video.
 
-*Paste a block of links: they wait in the add panel until you press start.*
+[![ci](https://github.com/3monthsfree/instagram-reel-recorder/actions/workflows/ci.yml/badge.svg)](https://github.com/3monthsfree/instagram-reel-recorder/actions/workflows/ci.yml)
+[![release](https://img.shields.io/github/v/release/3monthsfree/instagram-reel-recorder?color=d62976&label=release)](https://github.com/3monthsfree/instagram-reel-recorder/releases/latest)
+[![license](https://img.shields.io/badge/license-MIT-9e76e2.svg)](LICENSE)
 
-![The queue running, with the speed waveform under load](https://raw.githubusercontent.com/3monthsfree/instagram-reel-recorder/main/docs/running.webp)
+<img src="https://raw.githubusercontent.com/3monthsfree/instagram-reel-recorder/main/docs/running.webp" width="900" alt="The queue running, with the speed waveform under load">
 
-*Under way: progress meters per row, and the speed waveform with worker load
-filling in behind it.*
+</div>
+
+Eleven links pasted in one go, two downloading, the rest waiting their turn.
+Progress meters per row, a braille waveform of transfer rate with worker load
+filling in behind it, and the file sizes as they land.
+
+<img src="https://raw.githubusercontent.com/3monthsfree/instagram-reel-recorder/main/docs/staged.webp" width="900" alt="Eleven links staged, waiting on the start button">
+
+Nothing moves until you press start. Links sit in staging where you can look
+them over, drop the ones you did not mean to paste, and fire the batch when you
+are ready.
+
+## Features
+
+- **Paste a wall of links.** Every URL in the blob gets staged, however messy
+  the text around it is. Keep pasting while downloads run.
+- **Nothing starts behind your back.** Links wait in staging until you press
+  `enter` or click start, so a stray paste never costs you bandwidth.
+- **A dashboard, not a log.** Live progress meters, per-row sparklines, queue
+  stats, and a speed waveform that shows load even while ffmpeg is converting.
+- **Logged-in when it has to be.** Cycle cookies from Chromium, Firefox, Chrome
+  or Brave with one key, then retry the row that failed.
+- **Never downloads twice.** Files already in the folder are marked `have` and
+  reused instead of fetched again.
+- **Tune it while it runs.** Two jobs at a time by default, one to six on a
+  keypress, to stay the right side of rate limits.
+- **Keys or mouse, your call.** Click the start button and the rows, scroll the
+  lists, or never touch the mouse at all.
+- **One small binary.** About 1 MB, statically linked, no runtime beyond yt-dlp
+  and ffmpeg.
 
 Built with [ratatui](https://ratatui.rs) on top of
 [yt-dlp](https://github.com/yt-dlp/yt-dlp) and ffmpeg.
-
-## What it does
-
-- **Bulk paste.** Drop a whole block of links at once; every URL in the text is
-  staged. Keep adding while downloads run.
-- **Staging, then start.** Links wait in the add panel until you press `enter`
-  or click **▶ start**, so a stray paste never kicks off a download.
-- **Live dashboard.** Per-row progress meters and sparklines, a braille speed
-  waveform with worker load behind it, queue stats, and details for the
-  selected row.
-- **Cookies on a keypress.** Instagram often wants a logged-in session. `c`
-  cycles between no cookies and your browser's, and `r` retries the row.
-- **Knows what it already has.** A row marked `✓ have` was already in the
-  folder; nothing was re-downloaded.
 
 ## Requirements
 
@@ -203,6 +220,13 @@ across versions.
 Made for saving audio you have the right to keep: your own posts, things you
 have permission to use, or personal offline listening where that's allowed
 where you live. Respect the rights of whoever made what you're downloading.
+
+## Contributing
+
+Issues and pull requests are welcome. `cargo fmt` and
+`cargo clippy --all-targets -- -D warnings` both have to pass, which CI checks
+on every push. If you are reporting a download that fails, include the yt-dlp
+version and what the info panel said.
 
 ## License
 
