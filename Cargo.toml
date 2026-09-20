@@ -1,6 +1,6 @@
 [package]
 name = "reel2mp3"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2024"
 rust-version = "1.88"
 description = "Terminal dashboard for saving Instagram reels as MP3s, built on yt-dlp"
