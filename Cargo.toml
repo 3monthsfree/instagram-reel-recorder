@@ -1,0 +1,23 @@
+[package]
+name = "reel2mp3"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.88"
+description = "Terminal dashboard for saving Instagram reels as MP3s, built on yt-dlp"
+authors = ["3monthsfree"]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/3monthsfree/instagram-reel-recorder"
+homepage = "https://github.com/3monthsfree/instagram-reel-recorder"
+keywords = ["instagram", "mp3", "yt-dlp", "tui", "downloader"]
+categories = ["command-line-utilities", "multimedia::audio"]
+exclude = ["docs/", "packaging/", ".github/"]
+
+[dependencies]
+libc = "0.2.189"
+ratatui = "0.30.2"
+
+[profile.release]
+strip = true
+lto = true
+codegen-units = 1

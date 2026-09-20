@@ -1,0 +1,16 @@
+/target
+/reel2mp3
+
+# Downloads land in whatever folder you run it from, this one included.
+*.mp3
+*.mp4
+*.m4a
+*.webm
+*.part
+*.ytdl
+
+# KDE folder settings, editor and tool state
+.directory
+.claude/
+.idea/
+.vscode/

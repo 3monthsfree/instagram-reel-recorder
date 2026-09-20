@@ -1,0 +1,29 @@
+name: release
+
+# Tag a version to publish a binary:  git tag v0.1.0 && git push --tags
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+jobs:
+  binary:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: x86_64-unknown-linux-musl
+      - uses: Swatinem/rust-cache@v2
+
+      # musl gives one static binary that runs on any distro, no glibc pinning.
+      - run: sudo apt-get update && sudo apt-get install -y musl-tools
+      - run: cargo build --release --locked --target x86_64-unknown-linux-musl
+      - run: cp target/x86_64-unknown-linux-musl/release/reel2mp3 reel2mp3-x86_64-linux
+
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: reel2mp3-x86_64-linux
+          generate_release_notes: true

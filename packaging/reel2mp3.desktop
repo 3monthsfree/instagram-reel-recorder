@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=Reel to MP3
+GenericName=Instagram Audio Downloader
+Comment=Queue Instagram reels and save them as MP3s
+# Add --out <folder> to pick where MP3s land, and --cookies <browser> to
+# download as your logged-in account, e.g.:
+#   Exec=reel2mp3 --out %h/Music/reels --cookies chromium
+Exec=reel2mp3
+Icon=audio-mpeg
+Terminal=true
+Categories=AudioVideo;Audio;
+Keywords=instagram;reel;mp3;download;yt-dlp;
