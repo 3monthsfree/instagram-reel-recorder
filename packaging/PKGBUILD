@@ -10,7 +10,7 @@ depends=('yt-dlp' 'ffmpeg' 'gcc-libs')
 makedepends=('cargo')
 options=('!lto') # the release profile already sets it
 source=("$pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz")
-sha256sums=('SKIP')
+sha256sums=('80a9459326a2a172fc4725a6062412d248276c5acd1a92310887ca9f13c93dbc')
 _srcname="instagram-reel-recorder-$pkgver"
 
 prepare() {
