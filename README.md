@@ -9,6 +9,7 @@ sound and bin the video.
 
 [![ci](https://github.com/3monthsfree/instagram-reel-recorder/actions/workflows/ci.yml/badge.svg)](https://github.com/3monthsfree/instagram-reel-recorder/actions/workflows/ci.yml)
 [![release](https://img.shields.io/github/v/release/3monthsfree/instagram-reel-recorder?color=d62976&label=release)](https://github.com/3monthsfree/instagram-reel-recorder/releases/latest)
+[![crates.io](https://img.shields.io/crates/v/reel2mp3?color=e2b45c&label=crates.io)](https://crates.io/crates/reel2mp3)
 [![license](https://img.shields.io/badge/license-MIT-9e76e2.svg)](LICENSE)
 
 <img src="https://raw.githubusercontent.com/3monthsfree/instagram-reel-recorder/main/docs/running.webp" width="900" alt="The queue running, with the speed waveform under load">
@@ -71,6 +72,12 @@ It fetches the latest release binary into `~/.local/bin` and installs a desktop
 launcher. Read the script first if you'd rather not pipe to a shell; it's short.
 
 **With cargo** (any platform with Rust):
+
+```bash
+cargo install reel2mp3
+```
+
+For whatever has landed since the last release:
 
 ```bash
 cargo install --git https://github.com/3monthsfree/instagram-reel-recorder
@@ -197,7 +204,7 @@ Paste this into Claude Code, Codex, Cursor or similar:
 > Check whether yt-dlp and ffmpeg are already installed and install whichever is
 > missing with my system's package manager. Then install reel2mp3 itself, using
 > the release binary from install.sh if I have no Rust toolchain and
-> `cargo install --git` otherwise. Add the desktop launcher, set it to save MP3s in
+> `cargo install reel2mp3` otherwise. Add the desktop launcher, set it to save MP3s in
 > ~/Music/reels, and tell me how to launch it.
 
 ## How it works
