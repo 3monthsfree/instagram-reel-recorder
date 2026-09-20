@@ -12,13 +12,20 @@ sound and bin the video.
 [![crates.io](https://img.shields.io/crates/v/reel2mp3?color=e2b45c&label=crates.io)](https://crates.io/crates/reel2mp3)
 [![license](https://img.shields.io/badge/license-MIT-9e76e2.svg)](LICENSE)
 
-<img src="https://raw.githubusercontent.com/3monthsfree/instagram-reel-recorder/main/docs/running.webp" width="900" alt="The queue running, with the speed waveform under load">
+<img src="https://raw.githubusercontent.com/3monthsfree/instagram-reel-recorder/main/docs/demo.gif" width="900" alt="Six links staged, started, and downloading with the speed waveform filling in">
+
+*Six links staged, started with one key, and on their way. Recorded against
+clips generated for the demo and served from localhost, so nothing in it
+belongs to anyone else.*
 
 </div>
 
-Eleven links pasted in one go, two downloading, the rest waiting their turn.
-Progress meters per row, a braille waveform of transfer rate with worker load
-filling in behind it, and the file sizes as they land.
+<img src="https://raw.githubusercontent.com/3monthsfree/instagram-reel-recorder/main/docs/running.webp" width="900" alt="A real run: eleven links queued, two downloading">
+
+A real run, with names blurred: eleven links pasted in one go, two downloading,
+the rest waiting their turn. Progress meters per row, a braille waveform of
+transfer rate with worker load filling in behind it, and file sizes as they
+land.
 
 <img src="https://raw.githubusercontent.com/3monthsfree/instagram-reel-recorder/main/docs/staged.webp" width="900" alt="Eleven links staged, waiting on the start button">
 
